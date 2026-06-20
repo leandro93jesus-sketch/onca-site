@@ -1,0 +1,1 @@
+Suba no Netlify. Cole as regras do arquivo REGRAS_FIRESTORE.txt no Firestore > Regras. Crie usuário admin no Firebase Auth com email leandro93jesus@gmail.com. Abra admin.html e carregue a tabela inicial.
