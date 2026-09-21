@@ -1,8 +1,8 @@
 name: Build MegaCurso APK
 on:
-  push:
-    branches: [ megacurso-android-build-v2 ]
-    paths: [ BUILD_READY ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
