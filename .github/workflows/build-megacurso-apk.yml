@@ -15,6 +15,12 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - name: Prepare video tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg espeak python3-pil
+      - name: Generate offline narrated video lessons
+        run: python3 scripts/generate_videos.py
       - name: Accept SDK licenses
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null || true
       - name: Install Android SDK packages
@@ -26,6 +32,6 @@ jobs:
         run: gradle assembleDebug --stacktrace
       - uses: actions/upload-artifact@v4
         with:
-          name: MegaCurso-Automacao-App-V3
+          name: MegaCurso-Automacao-Pro-V4
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
